@@ -1,0 +1,43 @@
+<div class="header">
+  <h1><%= link_to "Movie.R", root_path %></h1>
+  <h3>HAM© International</h3>
+
+  <div id="movie-search">
+    <input type="text" id="title" placeholder="Search Movie By Title">
+    <button id="search">Search OMDB</button>
+  </div>
+</div>
+
+<hr>
+<div class="result-wrap">
+  <h2>Results</h2>
+  <div id="results-list"></div>
+</div>
+<div class="saved-wrap">
+  <h2>Saved</h2>
+  <div id="saved-list"></div>
+</div>
+
+<script type="text/template" id="plain-template">
+  <div class="plain-movie" id="<%%= imdbID %>">
+    <h3><a href="#movies/<%%= imdbID %>"><%%= title %></a>, <%%= year %></h3>
+    <button id="save">Save Movie</button>
+  </div>
+</script>
+
+<script type="text/template" id="saved-movies">
+  <div class="saved-movie" id="<%%= imdbID %>">
+    <h3><%%= title %>, <%%= year %></h3>
+    <img src="<%%= poster %>"/>
+    <p><%%= plot %></p>
+  </div>
+</script>
+
+<script type="text/template" id="detailed-template">
+  <div class="detailed-movie" id="<%%= imdbID %>">
+    <h3><%%= title %>, <%%= year %></h3>
+      <img src="<%%= poster %>"/>
+      <p><%%= plot %></p>
+    <button id="save">Save Movie</button>
+  </div>
+</script>
